@@ -19,7 +19,7 @@ const now = new Date().getTime();
 // Check if date is in the past
 if (now >= countDownDate) {
   // 🔁 If date is past, set a quick 2-second countdown
-  countDownDate = new Date(now + 2 * 1000).getTime();
+  countDownDate = new Date(now + 10 * 1000).getTime();
 }
 
 const x = setInterval(() => {
@@ -530,6 +530,7 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
 
