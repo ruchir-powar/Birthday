@@ -9,24 +9,28 @@ document.body.addEventListener('click', playMusic, { once: true });
 // ───── Countdown Timer ─────
 const timer = document.getElementById('timer');
 const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
-const originalDate = new Date('Aug 5, 2025 00:00:00').getTime();
+
+const originalDate = new Date('Aug 6, 2025 00:00:00').getTime();
 const now = new Date().getTime();
 
 let countdownTarget = originalDate;
 let useFallback = false;
 
-// 🔁 Check if original date has passed
+// Check if the original date has already passed
 if (now > originalDate) {
-  countdownTarget = now + 15000; // 15 seconds from now
+  countdownTarget = now + 15000; // 15 seconds fallback
   useFallback = true;
+  timer.classList.add('d-none'); // Hide actual countdown UI for fallback
+} else {
+  timer.classList.remove('d-none'); // Show countdown timer
 }
 
 const x = setInterval(() => {
   const current = new Date().getTime();
   const distance = countdownTarget - current;
 
-  // Only show actual timer if using original countdown
   if (!useFallback) {
+    // Show real countdown values
     document.getElementById('days').innerText = Math.floor(distance / day);
     document.getElementById('hours').innerText = Math.floor((distance % day) / hour);
     document.getElementById('minutes').innerText = Math.floor((distance % hour) / minute);
@@ -34,12 +38,13 @@ const x = setInterval(() => {
   }
 
   if (distance < 0) {
+    clearInterval(x);
     timer.classList.add('d-none');
     confetti();
-    clearInterval(x);
     _slideSatu();
   }
 }, second);
+
 
 
 // ───── Slide 1: Intro Image ─────
@@ -530,6 +535,7 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
 
