@@ -6,6 +6,7 @@ html {
   text-align: center;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* Background */
@@ -19,13 +20,14 @@ html {
   height: 100%;
 }
 
-/* Image on Slide 1 */
+/* Slide 1 Image */
 .img {
   display: inline-block;
   position: relative;
   top: 20px;
   margin: 30px auto;
   width: 350px;
+  max-width: 90%;
 }
 
 /* Countdown Timer */
@@ -39,15 +41,14 @@ html {
 
 ul {
   padding: 0;
+  margin: 0 auto;
 }
 
 li {
   display: inline-block;
   font-size: 16px;
   list-style-type: none;
-  position: relative;
-  left: -20px;
-  margin-top: 10px;
+  margin: 10px 10px 0;
   padding: 10px;
   text-transform: uppercase;
 }
@@ -57,18 +58,16 @@ li span {
   font-size: 24px;
 }
 
-/* Paper Style for Text Slides */
+/* Paper Slides */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Handlee');
 
 .paper {
   font-family: 'Roboto', sans-serif;
-  position: relative;
   width: 90%;
   max-width: 800px;
-  min-width: 300px;
-  height: 540px;
   margin: 50px auto;
+  height: auto;
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
@@ -76,6 +75,7 @@ li span {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
   overflow: hidden;
+  padding-bottom: 40px;
 }
 
 .paper:before {
@@ -92,44 +92,32 @@ li span {
 }
 
 .paper-content {
-  position: absolute;
+  position: relative;
   top: 30px;
-  right: 0;
-  bottom: 30px;
-  left: 50px;
+  padding: 0 20px 0 60px;
   background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
   background-size: 30px 30px;
+  box-sizing: border-box;
 }
 
 .paper-content .teks {
   text-align: left;
   width: 100%;
-  max-width: 100%;
   height: 100%;
-  max-height: 100%;
   line-height: 30px;
-  padding: 0 10px;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: #3f3f44;
+  font-size: clamp(16px, 4vw, 20px);
   font-family: 'Handlee', cursive;
-  font-size: 18px;
-  box-sizing: border-box;
-  z-index: 1;
+  color: #3f3f44;
 }
 
-/* Question Slide: Do You Like It? */
+/* Like/Dislike Box */
 .kotak {
   position: relative;
   width: 90%;
   max-width: 550px;
-  min-width: 200px;
-  max-height: 350px;
-  min-height: 100px;
-  top: 300px;
-  padding: 20px 0;
-  display: inline-block;
+  top: 250px;
+  margin: 0 auto;
+  padding: 20px;
   background: #fafafa;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
@@ -138,6 +126,9 @@ li span {
 
 .btn {
   border-radius: 40px;
+  width: 100%;
+  max-width: 150px;
+  margin-top: 10px;
 }
 
 /* Final Heart Slide */
@@ -158,32 +149,66 @@ li span {
   font-style: italic;
 }
 
-/* Responsive Adjustments */
+/* Responsive for Mobile & Tablets */
 @media screen and (max-width: 768px) {
-  .img {
-    width: 80%;
+  .container {
+    top: 150px;
   }
 
   .paper {
-    height: auto;
+    margin-top: 30px;
+    padding-bottom: 30px;
   }
 
   .paper-content {
     top: 20px;
-    bottom: 20px;
-    left: 40px;
-    right: 10px;
+    padding: 0 10px 0 50px;
   }
 
   .paper-content .teks {
     font-size: 16px;
+    line-height: 28px;
   }
 
   .kotak {
     top: 150px;
+    padding: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
   }
 
   #slideLima, #trims {
     top: 200px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .img {
+    width: 80%;
+  }
+
+  .paper-content {
+    padding: 0 10px 0 40px;
+  }
+
+  .paper-content .teks {
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  .kotak {
+    width: 95%;
+    top: 100px;
+  }
+
+  .btn {
+    max-width: 120px;
+    font-size: 13px;
+  }
+
+  #slideLima, #trims {
+    top: 150px;
   }
 }
