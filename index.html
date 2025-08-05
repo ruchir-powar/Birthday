@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="./img/hbd.png" />
+</head>
+
+<body>
+  <audio id="background-music" src="./music/monokrom.mp3" preload="auto"></audio>
+
+  <div class="bg" id="content">
+
+    <!-- Countdown Timer -->
+    <div class="container" id="timer">
+      <h5>Countdown to <x id="name"></x> birthday:</h5>
+      <ul>
+        <li><span id="days"></span>Days</li>
+        <li><span id="hours"></span>Hours</li>
+        <li><span id="minutes"></span>Minutes</li>
+        <li><span id="seconds"></span>Seconds</li>
+      </ul>
+    </div>
+
+    <!-- Slide 1 -->
+    <div id="slideSatu" class="animate__animated animate__slideInDown animate__slow d-none">
+      <img src="./img/hbd1.png" class="img" />
+    </div>
+
+    <!-- Slide 2 -->
+    <div id="slideDua" class="slides d-none paper animate__zoomInDown animate__animated animate__delay-2s animate__slow">
+      <div class="paper-content">
+        <p id="teks1" class="teks"></p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div id="slideTiga" class="slides d-none paper animate__fadeInRight animate__animated">
+      <div class="paper-content">
+        <p id="teks2" class="teks"></p>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div id="slideEmpatMsg" class="slides d-none paper animate__fadeInRight animate__animated">
+      <div class="paper-content">
+        <p id="teks3" class="teks"></p>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div id="slideLimaMsg" class="slides d-none paper animate__fadeInRight animate__animated">
+      <div class="paper-content">
+        <p id="teks4" class="teks"></p>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div id="slideEnamMsg" class="slides d-none paper animate__fadeInRight animate__animated">
+      <div class="paper-content">
+        <p id="teks5" class="teks"></p>
+      </div>
+    </div>
+    <!-- ✅ NEW: SlideThankYou: Thank You Message Slide -->
+<div id="slideThankYou" class="d-none animate__fadeIn animate__animated animate__slow">
+  <p id="trims" class="text-muted mt-5" style="font-size: 1.5rem;"></p>
+</div>
+    <!-- Like/Dislike Slide -->
+    <div class="kotak d-none slides animate__animated animate__fadeInDown animate__delay-2s" id="slideEmpat">
+      <div class="row">
+        <div class="col-sm mt-1">
+          <h5>Kamu suka nggak?</h5>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-4 offset-2">
+          <button id="gak" class="btn btn-outline-danger">Gak!</button>
+        </div>
+        <div class="col-4">
+          <button id="suka" class="btn btn-outline-info">Suka!!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heart Slide -->
+    <div id="slideLima" class="d-none animate__bounceIn animate__animated animate__slow">
+      <i class="fas fa-heart fa-5x text-danger"></i>
+    </div>
+
+    <!-- Tap to Continue -->
+    <p id="tap" class="d-none animate__animated animate__pulse text-muted animate__slow animate__repeat-3">
+      Tap To Continue
+    </p>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer font-small blue fixed-bottom"></footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/61e5120832.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
