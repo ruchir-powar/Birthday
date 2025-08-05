@@ -18,7 +18,7 @@ let useFallback = false;
 
 // Check if the original date has already passed
 if (now > originalDate) {
-  countdownTarget = now + 15000; // 15 seconds fallback
+  countdownTarget = now + 2000; // 15 seconds fallback
   useFallback = true;
   timer.classList.add('d-none'); // Hide actual countdown UI for fallback
 } else {
@@ -535,6 +535,7 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
 
