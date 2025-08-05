@@ -79,17 +79,9 @@ li span {
 }
 
 .paper:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 5px;
-  width: 45px;
-  background: radial-gradient(#616161 6px, transparent 7px) repeat-y;
-  background-size: 30px 30px;
-  border-right: 3px solid #D44147;
-  box-sizing: border-box;
+  content: none;
 }
+
 
 .paper-content {
   position: relative;
@@ -212,3 +204,4 @@ li span {
     top: 150px;
   }
 }
+
