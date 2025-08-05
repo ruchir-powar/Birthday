@@ -11,7 +11,7 @@ const timer = document.getElementById('timer');
 const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
 
 // 🕒 Define your main countdown date in the correct format
-let countDownDate = new Date('Aug 5 2025 00:00:00').getTime();
+let countDownDate = new Date('Aug 6 2025 00:00:00').getTime();
 
 // Get current time
 const now = new Date().getTime();
@@ -19,7 +19,7 @@ const now = new Date().getTime();
 // Check if date is in the past
 if (now >= countDownDate) {
   // 🔁 If date is past, set a quick 2-second countdown
-  countDownDate = new Date(now + 10 * 1000).getTime();
+  countDownDate = new Date(now + 15 * 1000).getTime();
 }
 
 const x = setInterval(() => {
@@ -530,6 +530,7 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
 
