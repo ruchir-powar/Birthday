@@ -164,7 +164,7 @@ new TypeIt("#teks1", {
 
 new TypeIt("#teks2", {
   strings: [
-    "It’s been *years* knowing you... and honestly, it feels like you haven’t changed a bit 🕰️",
+    "It’s been years knowing you... and honestly, it feels like you haven’t changed a bit 🕰️",
     "Still that same beautiful mix of the loudest laugh 😂 and the softest heart 💗 — a combo no girl could ever pull off like you do ✨",
     "Whenever I hear your name, it’s like a reel of memories 🎞️:",
     "Us playing PUBG like it was life 🎮🔥",
@@ -184,9 +184,9 @@ new TypeIt("#teks3", {
     "No wonder you’re doing amazing — you're built for more 🚀",
     "I was proud, really. Quietly proud 😌",
     "Even if I never said it, I admired you from afar 👀",
-    "When I saw you were back, I *badly* wanted to message 📲",
+    "When I saw you were back, I badly wanted to message 📲",
     "But I didn’t know if I should... 🤔",
-    "So when *you* texted first… 💬",
+    "So when you texted first… 💬",
     "It felt like a warm hug out of nowhere 🤗"
   ],
   startDelay: 2000,
@@ -198,7 +198,7 @@ new TypeIt("#teks3", {
 new TypeIt("#teks4", {
   strings: [
     "We met during a very dumb phase of my life 😅",
-    "I wasn’t really *me*. I wish things were different back then… 🫤",
+    "I wasn’t really me. I wish things were different back then… 🫤",
     "Because maybe we’d have turned out differently too 🧩",
     "I know talking like this after 5 years might not make much sense 🕰️",
     "But sometimes, things unsaid scream louder than things spoken 🔇💭",
@@ -219,7 +219,7 @@ new TypeIt("#teks5", {
     "And I truly believe — you always will be 💖",
     "This wasn’t just some birthday wish 🎉",
     "This was something to remind you… 📝",
-    "You’re still the **kindest** 🫶, the **cutest** 🐣, the **softest** 🌸, the **prettiest** 👸 — all in one person 💯",
+    "You’re still the kindest 🫶, the cutest 🐣, the softest 🌸, the prettiest 👸 — all in one person 💯",
     "And no matter where life takes you… 🌍",
     "I’ll always be silently cheering for you 💛💛 ~Ruu"
   ],
@@ -530,6 +530,7 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
 
