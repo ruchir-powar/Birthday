@@ -10,40 +10,35 @@ document.body.addEventListener('click', playMusic, { once: true });
 const timer = document.getElementById('timer');
 const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
 
-const originalDate = new Date('Aug 5 2025 00:00:00').getTime();
+// 🕒 Define your main countdown date in the correct format
+let countDownDate = new Date('Aug 5 2025 00:00:00').getTime();
+
+// Get current time
 const now = new Date().getTime();
 
-let countdownTarget = originalDate;
-let useFallback = false;
-
-// Check if the original date has already passed
-if (now > originalDate) {
-  countdownTarget = now + 2000; // 15 seconds fallback
-  useFallback = true;
-  timer.classList.add('d-none'); // Hide actual countdown UI for fallback
-} else {
-  timer.classList.remove('d-none'); // Show countdown timer
+// Check if date is in the past
+if (now >= countDownDate) {
+  // 🔁 If date is past, set a quick 2-second countdown
+  countDownDate = new Date(now + 2 * 1000).getTime();
 }
 
 const x = setInterval(() => {
-  const current = new Date().getTime();
-  const distance = countdownTarget - current;
+  const now = new Date().getTime();
+  const distance = countDownDate - now;
 
-  if (!useFallback) {
-    // Show real countdown values
-    document.getElementById('days').innerText = Math.floor(distance / day);
-    document.getElementById('hours').innerText = Math.floor((distance % day) / hour);
-    document.getElementById('minutes').innerText = Math.floor((distance % hour) / minute);
-    document.getElementById('seconds').innerText = Math.floor((distance % minute) / second);
-  }
+  document.getElementById('days').innerText = Math.floor(distance / day);
+  document.getElementById('hours').innerText = Math.floor((distance % day) / hour);
+  document.getElementById('minutes').innerText = Math.floor((distance % hour) / minute);
+  document.getElementById('seconds').innerText = Math.floor((distance % minute) / second);
 
   if (distance < 0) {
-    clearInterval(x);
     timer.classList.add('d-none');
     confetti();
-    _slideSatu();
+    clearInterval(x);
+    _slideSatu(); // 🚀 Start the site
   }
 }, second);
+
 
 
 
@@ -535,6 +530,7 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
 
