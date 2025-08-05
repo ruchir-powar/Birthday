@@ -151,38 +151,46 @@ li span {
 
 /* Responsive for Mobile & Tablets */
 @media screen and (max-width: 768px) {
-  .container {
-    top: 150px;
+  .img {
+    width: 80%;
   }
 
   .paper {
-    margin-top: 30px;
-    padding-bottom: 30px;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .paper:before {
+    width: 30px; /* reduce red line space */
+    background-size: 20px 20px;
+    border-right: 2px solid #D44147;
   }
 
   .paper-content {
-    top: 20px;
-    padding: 0 10px 0 50px;
+    top: 15px;
+    bottom: 15px;
+    left: 35px;
+    right: 10px;
+    background-size: 24px 24px; /* smaller line spacing */
   }
 
   .paper-content .teks {
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 0 5px;
   }
 
   .kotak {
     top: 150px;
-    padding: 15px;
   }
 
-  .btn {
-    font-size: 14px;
-  }
-
-  #slideLima, #trims {
+  #slideLima,
+  #trims {
     top: 200px;
   }
 }
+
 
 @media screen and (max-width: 576px) {
   .img {
@@ -212,3 +220,4 @@ li span {
     top: 150px;
   }
 }
+
