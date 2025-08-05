@@ -9,7 +9,7 @@ document.body.addEventListener('click', playMusic, { once: true });
 // ───── Countdown Timer ─────
 const timer = document.getElementById('timer');
 const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
-const originalDate = new Date('Aug 6, 2025 00:00:00').getTime();
+const originalDate = new Date('Aug 5, 2025 00:00:00').getTime();
 const now = new Date().getTime();
 
 let countdownTarget = originalDate;
@@ -530,6 +530,7 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
 
