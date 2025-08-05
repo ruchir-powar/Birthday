@@ -9,17 +9,29 @@ document.body.addEventListener('click', playMusic, { once: true });
 // ───── Countdown Timer ─────
 const timer = document.getElementById('timer');
 const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
-let countDown = new Date('Aug 6, 2025 00:00:00').getTime();
+const originalDate = new Date('Aug 6, 2025 00:00:00').getTime();
+const now = new Date().getTime();
 
+let countdownTarget = originalDate;
+let useFallback = false;
+
+// 🔁 Check if original date has passed
+if (now > originalDate) {
+  countdownTarget = now + 15000; // 15 seconds from now
+  useFallback = true;
+}
 
 const x = setInterval(() => {
-  const now = new Date().getTime();
-  const distance = countDown - now;
+  const current = new Date().getTime();
+  const distance = countdownTarget - current;
 
-  document.getElementById('days').innerText = Math.floor(distance / day);
-  document.getElementById('hours').innerText = Math.floor((distance % day) / hour);
-  document.getElementById('minutes').innerText = Math.floor((distance % hour) / minute);
-  document.getElementById('seconds').innerText = Math.floor((distance % minute) / second);
+  // Only show actual timer if using original countdown
+  if (!useFallback) {
+    document.getElementById('days').innerText = Math.floor(distance / day);
+    document.getElementById('hours').innerText = Math.floor((distance % day) / hour);
+    document.getElementById('minutes').innerText = Math.floor((distance % hour) / minute);
+    document.getElementById('seconds').innerText = Math.floor((distance % minute) / second);
+  }
 
   if (distance < 0) {
     timer.classList.add('d-none');
@@ -28,6 +40,7 @@ const x = setInterval(() => {
     _slideSatu();
   }
 }, second);
+
 
 // ───── Slide 1: Intro Image ─────
 const _slideSatu = () => {
@@ -517,6 +530,7 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
 
