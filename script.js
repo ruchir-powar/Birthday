@@ -109,7 +109,7 @@ const _slideLima = () => {
 };
 
 // ───── Tap Transition Handler ─────
-function transitionSlide(currentId, nextId, callback, delay = 12000) {
+function transitionSlide(currentId, nextId, callback, delay = 20000) {
   const tap = document.getElementById('tap');
   const current = document.getElementById(currentId);
   const next = document.getElementById(nextId);
@@ -516,5 +516,6 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
