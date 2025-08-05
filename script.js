@@ -9,7 +9,55 @@ document.body.addEventListener('click', playMusic, { once: true });
 // ───── Countdown Timer ─────
 const timer = document.getElementById('timer');
 const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
-let countDown = new Date('Aug 5, 2025 14:07:00').getTime();
+const targetDate = new Date('Aug 5, 2025 00:00:00').getTime();
+const now = new Date().getTime();
+
+let countDown;
+let isFakeCountdown = false;
+
+// Determine which countdown to use
+if (now >= targetDate) {
+  // If date already passed, use fake 15-second countdown
+  countDown = now + 15000;
+  isFakeCountdown = true;
+} else {
+  // Use actual countdown
+  countDown = targetDate;
+}
+
+// Start the countdown
+const x = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = countDown - now;
+
+  if (distance < 0) {
+    clearInterval(x);
+    timer.classList.add('d-none');
+    confetti(); // Or whatever you want to trigger
+    _slideSatu(); // Start the slides
+    return;
+  }
+
+  // Update the UI with correct time
+  const days = Math.floor(distance / day);
+  const hours = Math.floor((distance % day) / hour);
+  const minutes = Math.floor((distance % hour) / minute);
+  const seconds = Math.floor((distance % minute) / second);
+
+  if (isFakeCountdown) {
+    // Hide days/hours/minutes if it's a fake countdown
+    document.getElementById('days').innerText = '0';
+    document.getElementById('hours').innerText = '0';
+    document.getElementById('minutes').innerText = '0';
+    document.getElementById('seconds').innerText = seconds;
+  } else {
+    document.getElementById('days').innerText = days;
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('seconds').innerText = seconds;
+  }
+}, second);
+
 
 const x = setInterval(() => {
   const now = new Date().getTime();
@@ -516,6 +564,7 @@ function _slideThankYou() {
     }, 3000);
   }, 6000);
 }
+
 
 
 
