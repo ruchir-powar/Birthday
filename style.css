@@ -87,7 +87,7 @@ li span {
   position: relative;
   top: 30px;
   padding: 0 20px 0 60px;
-  background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+  background: transparent;
   background-size: 30px 30px;
   box-sizing: border-box;
 }
@@ -204,4 +204,5 @@ li span {
     top: 150px;
   }
 }
+
 
